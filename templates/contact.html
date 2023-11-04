@@ -1,0 +1,172 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+       <!-- sidebar-information-area-start -->
+        <div class="sidebar-info side-info">
+            <div class="sidebar-logo-wrapper mb-25">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-8">
+                        <div class="sidebar-logo">
+                            <a href="index.html"><img src="{% static 'assets/img/logo/logo-white.png' %}" alt="logo-img"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-4">
+                        <div class="sidebar-close-wrapper text-end">
+                            <button class="sidebar-close side-info-close"><i class="fal fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-menu-wrapper fix">
+                <div class="mobile-menu"></div>
+            </div>
+        </div>
+        <div class="offcanvas-overlay"></div>
+        <!-- sidebar-information-area-end -->
+
+        <!-- header area start -->
+        {% include 'include/header.html'%}
+        <!-- header area end -->
+
+        <main>
+            <!-- breadcrumb area start -->
+            <section class="breadcrumb-area bg-default" data-background="{% static 'assets/img/breadcrumb/breadcrumb-bg.jpg' %}">
+                <img src="{% static 'assets/img/breadcrumb/shape-1.png' %}" alt="" class="breadcrumb-shape">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h2 class="breadcrumb-title">Связаться с нами</h2>
+                                <div class="breadcrumb-list">
+                                    <a href="{% url 'index' %}">Главная страница</a>
+                                    <span>Связаться с нами</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb area end -->
+
+            <!-- contact area start -->
+            <section class="contact-area pt-120 pb-120">
+                <div class="container">
+                    <div class="contact-wrap">
+                        <div class="row">
+                            <div class="col-xl-8 col-md-8">
+                                <div class="contact-content pr-80 mb-20">
+                                    <h3 class="contact-title mb-25">Отправь мне сообщение</h3>
+                                    <form action="#" class="contact-form">
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                                <div class="contact-form-input mb-30">
+                                                    <input type="text" placeholder="Ваше имя">
+                                                    <span class="inner-icon"><i class="fa-thin fa-user"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                                <div class="contact-form-input mb-30">
+                                                    <input type="email" placeholder="Ваша почта">
+                                                    <span class="inner-icon"><i class="fa-thin fa-envelope"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                                <div class="contact-form-input mb-30">
+                                                    <input type="text" placeholder="Ваш номер">
+                                                    <span class="inner-icon"><i class="fa-thin fa-phone-volume"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 ">
+                                                <div class="contact-form-input">
+                                                    <span class="inner-icon inner-icon-select"><i class="fa-thin fa-circle-exclamation"></i></span>
+                                                    <select name="select" class="contact-form-list has-nice-select mb-30">
+                                                        <option value="1">Выберите направление</option>
+                                                        <option value="2">Android разработка</option>
+                                                        <option value="3">Frontend разработка</option>
+                                                        <option value="4">Backend разработка</option>
+                                                        <option value="5">UX/UI Дизайнер</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="contact-form-input mb-50 contact-form-textarea">
+                                                    <textarea name="message" cols="30" rows="10" placeholder="Смело обращайтесь !"></textarea>
+                                                    <span class="inner-icon"><i class="fa-thin fa-pen"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="contact-form-submit mb-30">
+                                                    <div class="contact-form-btn">
+                                                        <a href="#" class="theme-btn contact-btn">Отправить сообщение</a>
+                                                    </div>
+                                                    <div class="contact-form-condition">
+                                                        <label class="condition_label">Я согласен с условиями.
+                                                            <input type="checkbox">
+                                                            <span class="check_mark"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-4">
+                                <div class="contact-info ml-50 mb-20">
+                                    <h3 class="contact-title mb-40">Связаться</h3>
+                                    <div class="contact-info-item">
+                                        <span><i class="fa-thin fa-location-dot"></i>
+                                            Адрес</span>
+                                        <p>{{settings.address}}</p>
+                                    </div>
+                                    <div class="contact-info-item">
+                                        <span><i class="fa-thin fa-mobile-notch"></i>Телефон</span>
+                                        <a href="tel:+123548645850">{{settings.phone}}</a>
+                                    </div>
+                                    <div class="contact-info-item">
+                                        <span><i class="fa-thin fa-envelope"></i>Электронная почта</span>
+                                        <a href="mailto:example@gmail.com">{{settings.email}}</a>
+                                    </div>
+                                    <div class="contact-social">
+                                        <span>Социальные медиа</span>
+                                        <ul>
+                                            <li><a href="{{settings.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                                            <li><a href="{{settings.facebook}}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            <li><a href="{{settings.youtube}}"><i class="fa-brands fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12133.643941492379!2d72.79244969699616!3d40.510406213787164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdaf51e4e11011%3A0x2dd3bbd34364f3e1!2zSVQt0LrRg9GA0YHRiyDQmtGD0YDRgdGLINC_0YDQvtCz0YDQsNC80LzQuNGA0L7QstCw0L3QuNGPINCe0YggR2Vla3M!5e0!3m2!1sru!2skg!4v1699092616699!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+            <!-- contact area end -->
+
+            <!-- cta area start -->
+            <div class="cta-area">
+                <div class="container">
+                    <div class="cta-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="cta-content mb-30 mb-lg-0">
+                                    <span class="cta-subtitle">Мотивацию надо подняяяять</span>
+                                    <h2 class="cta-title">Не волнуйся, если не работает. ...</h2>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cta area end -->
+        </main>
+
+        <!-- footer area start -->
+        {% include 'include/footer.html' %}
+        <!-- footer area end -->
+
+{% endblock %}

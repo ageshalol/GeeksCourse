@@ -1,0 +1,41 @@
+{% load static %}
+<!Doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{settings.title}} & {{settings.descriptions}}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="{{settings.logo.url}}">
+        <!-- Place favicon.ico in the root directory -->
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    </head>
+     
+    <body>
+        {% block content %}
+        {% endblock %}
+        		<!-- JS here -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
+        <script src="{% static 'assets/js/wow.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'assets/js/odometer.min.js' %}"></script>
+        <script src="{% static 'assets/js/appear.min.js' %}"></script>
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+</html>

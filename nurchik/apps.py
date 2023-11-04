@@ -1,0 +1,7 @@
+from django.apps import AppConfig
+
+
+class NurchikConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'nurchik'
+    verbose_name= "Основные параметры"

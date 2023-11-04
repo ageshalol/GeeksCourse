@@ -1,0 +1,1379 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+
+       <!-- sidebar-information-area-start -->
+        <div class="sidebar-info side-info">
+            <div class="sidebar-logo-wrapper mb-25">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-8">
+                        <div class="sidebar-logo">
+                            <a href="index.html"><img src="{% static 'assets/img/logo/logo-white.png' %}" alt="logo-img"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-4">
+                        <div class="sidebar-close-wrapper text-end">
+                            <button class="sidebar-close side-info-close"><i class="fal fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-menu-wrapper fix">
+                <div class="mobile-menu"></div>
+            </div>
+        </div>
+        <div class="offcanvas-overlay"></div>
+        <!-- sidebar-information-area-end -->
+
+        {% include 'include/header.html'%}
+
+        <main>
+            <!-- banner area start -->
+            <section class="h3_banner-area">
+                <div class="h3_single-banner">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-xl-7 col-lg-6 col-md-12">
+                                <div class="h3_banner-content">
+                                    <div class="section-area-3 mb-45 ">
+                                        <h1 class="section-title">{{slide.title}}</h1>
+                                        <p class="section-text">{{slide.descriptions}}</p>
+                                    </div>
+                                    <img class="h3_banner-content-shape-1" src="{% static 'assets/img/banner/3/shape-1.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-6 d-none d-lg-block">
+                                <div class="h3_banner-right">
+                                    <div class="h3_banner-img">
+                                        <img src="{{slide.image.url}}" alt="">
+                                    </div>
+                                    <div class="h3_banner-right-shape">
+                                        <div class="inner-shpae-1">
+                                            <img class="h3_banner-shape-2" src="{% static 'assets/img/banner/3/shape-2.png' %}" alt="">
+                                        </div>
+                                        <img class="h3_banner-shape-1" src="{% static 'assets/img/banner/3/shape-3.png' %}" alt="">
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- banner area end -->
+
+            <!-- about area start -->
+            <section class="h3_about-area pt-140 pb-90">
+                <img src="{% static 'assets/img/about/3/shape-5.png' %}" alt="" class="h3_about-top-shape">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="h3_about-img mb-50">
+                                <div class="h3_about-inner-img w_img mr-50">
+                                    <img src="{{about.image.url}}" alt="">
+                                </div>
+                                <div class="h3_about-img-shape d-none d-sm-block">
+                                    <img class="h3_about-img-shape-1" src="{% static 'assets/img/about/3/shape-1.png' %}" alt="">
+                                    <img class="h3_about-img-shape-2" src="{% static 'assets/img/about/3/shape-2.png' %}" alt="">
+                                    <img class="h3_about-img-shape-3" src="{% static 'assets/img/about/3/shape-3.png' %}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="h3_about-wrap mr-65 mb-50">
+                                <img src="{% static 'assets/img/about/3/shape-4.png' %}" alt="" class="h3_about-wrap-shape">
+                                <div class="section-area-3 mb-35 small-section-area-3">
+                                    <span class="section-subtitle">Знайте о нас</span>
+                                    <h2 class="section-title mb-25">{{about.title}}</h2>
+                                    <p class="section-text">
+                                        {{about.descriptions}}
+                                    </p>
+                                </div>
+                               
+                                <div class="h3_about-button">
+                                    <a href="{% url 'about' %}" class="theme-btn theme-btn-medium theme-btn-3">Подробнее<i class="fa-light fa-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- about area end -->
+
+            <!-- category area start -->
+            <section class="h3_category-area pt-135 pb-110">
+                <div class="container">
+                    <div class="row align-items-end mb-30">
+                        <div class="col-md-9">
+                            <div class="section-area-3 mb-30">
+                                <span class="section-subtitle">Popular Categories</span>
+                                <h2 class="section-title mb-0">Featured Design Category.</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="h3_category-section-button mb-40 text-md-end">
+                                <a href="#" class="theme-btn theme-btn-medium theme-btn-3">All Categories<i class="fa-light fa-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="h3_category-item mb-30">
+                                <div class="h3_category-item-icon">
+                                    <i class="fa-light fa-square-pen"></i>
+                                </div>
+                                <div class="h3_category_inner">
+                                    <div class="h3_category-item-content">
+                                        <h5><a href="course.html">Graphic Design</a></h5>
+                                        <p>34+ Courses</p>
+                                    </div>
+                                    <div class="h3_category-btn">
+                                        <a href="#"><i class="fa-light fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="h3_category-item mb-30">
+                                <div class="h3_category-item-icon">
+                                    <i class="fa-light fa-grid-2-plus fa-flip-vertical"></i>
+                                </div>
+                                <div class="h3_category_inner">
+                                    <div class="h3_category-item-content">
+                                        <h5><a href="course.html">IT & Software</a></h5>
+                                        <p>126+ Courses</p>
+                                    </div>
+                                    <div class="h3_category-btn">
+                                        <a href="#"><i class="fa-light fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="h3_category-item mb-30">
+                                <div class="h3_category-item-icon">
+                                    <i class="fa-light fa-square-poll-vertical"></i>
+                                </div>
+                                <div class="h3_category_inner">
+                                    <div class="h3_category-item-content">
+                                        <h5><a href="course.html">Digital Marketing</a></h5>
+                                        <p>54+ Courses</p>
+                                    </div>
+                                    <div class="h3_category-btn">
+                                        <a href="#"><i class="fa-light fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="h3_category-item mb-30">
+                                <div class="h3_category-item-icon">
+                                    <i class="fa-light fa-pen-to-square"></i>
+                                </div>
+                                <div class="h3_category_inner">
+                                    <div class="h3_category-item-content">
+                                        <h5><a href="course.html">UI/UX Design</a></h5>
+                                        <p>68+ Courses</p>
+                                    </div>
+                                    <div class="h3_category-btn">
+                                        <a href="#"><i class="fa-light fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="h3_category-item mb-30">
+                                <div class="h3_category-item-icon">
+                                    <i class="fa-light fa-language"></i>
+                                </div>
+                                <div class="h3_category_inner">
+                                    <div class="h3_category-item-content">
+                                        <h5><a href="course.html">Language</a></h5>
+                                        <p>98+ Courses</p>
+                                    </div>
+                                    <div class="h3_category-btn">
+                                        <a href="#"><i class="fa-light fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="h3_category-item mb-30">
+                                <div class="h3_category-item-icon">
+                                    <i class="fa-light fa-mobile-notch"></i>
+                                </div>
+                                <div class="h3_category_inner">
+                                    <div class="h3_category-item-content">
+                                        <h5><a href="course.html">Mobile App</a></h5>
+                                        <p>169+ Courses</p>
+                                    </div>
+                                    <div class="h3_category-btn">
+                                        <a href="#"><i class="fa-light fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- category area end -->
+
+            <!-- course area start -->
+            <section class="h3_course-area pt-135 pb-110">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section-area-3 text-center mb-40">
+                                <span class="section-subtitle">Top Popular Courses</span>
+                                <h2 class="section-title mb-0">Explore Featured Courses</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="h3_course-tab mb-40">
+                                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                                        See All
+                                      </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Trending</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Featured</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link" id="pills-four-tab" data-bs-toggle="pill" data-bs-target="#pills-four" type="button" role="tab" aria-controls="pills-four" aria-selected="false">Web Design</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link" id="pills-five-tab" data-bs-toggle="pill" data-bs-target="#pills-five" type="button" role="tab" aria-controls="pills-five" aria-selected="false">Popular</button>
+                                    </li>
+                                </ul>                                      
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h3_course-wrap">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/1.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Leadership</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>42 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>64 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>20 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">A Comprehensive Overview of The Field of Education.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$120</del>$96.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-1.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Widget</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(46)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/2.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Marketing</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>35 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>45 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>23 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">Studying Principles of Educational Organizational.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$124</del>$99.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-2.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Russell</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(24)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/3.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Education</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>26 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>48 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>20 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">Examining Strategies to Promote Inclusivity and Diversity.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$138</del>$85.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-3.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Ameter</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(36)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                               <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/1.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Leadership</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>42 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>64 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>20 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">A Comprehensive Overview of The Field of Education.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$120</del>$96.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-1.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Widget</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(46)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/2.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Marketing</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>35 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>45 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>23 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">Studying Principles of Educational Organizational.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$124</del>$99.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-2.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Russell</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(24)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/3.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Education</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>26 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>48 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>20 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">Examining Strategies to Promote Inclusivity and Diversity.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$138</del>$85.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-3.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Ameter</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(36)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/1.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Leadership</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>42 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>64 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>20 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">A Comprehensive Overview of The Field of Education.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$120</del>$96.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-1.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Widget</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(46)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/2.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Marketing</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>35 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>45 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>23 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">Studying Principles of Educational Organizational.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$124</del>$99.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-2.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Russell</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(24)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/3.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Education</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>26 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>48 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>20 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">Examining Strategies to Promote Inclusivity and Diversity.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$138</del>$85.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-3.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Ameter</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(36)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-four" role="tabpanel" aria-labelledby="pills-four-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/1.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Leadership</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>42 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>64 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>20 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">A Comprehensive Overview of The Field of Education.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$120</del>$96.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-1.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Widget</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(46)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/2.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Marketing</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>35 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>45 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>23 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">Studying Principles of Educational Organizational.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$124</del>$99.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-2.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Russell</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(24)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/3.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Education</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>26 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>48 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>20 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">Examining Strategies to Promote Inclusivity and Diversity.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$138</del>$85.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-3.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Ameter</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(36)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-five" role="tabpanel" aria-labelledby="pills-five-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/1.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Leadership</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>42 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>64 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>20 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">A Comprehensive Overview of The Field of Education.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$120</del>$96.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-1.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Widget</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(46)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/2.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Marketing</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>35 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>45 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>23 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">Studying Principles of Educational Organizational.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$124</del>$99.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-2.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Russell</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(24)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="h3_course-item mb-30">
+                                            <div class="h3_course-item-top">
+                                                <div class="h3_course-item-img">
+                                                    <a href="course-details.html"><img src="{% static 'assets/img/course/3/3.jpg' %}" alt=""></a>
+                                                    <div class="h3_course-item-tag">
+                                                        <a href="#">Education</a>
+                                                    </div>
+                                                    <div class="h3_course-item-save">
+                                                        <a href="#"><i class="fa-light fa-bookmark"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-content">
+                                                    <div class="h3_course-content-info">
+                                                        <ul>
+                                                            <li><i class="fa-light fa-book-blank"></i>26 Lessons</li>
+                                                            <li><i class="fa-light fa-user-group"></i>48 Students</li>
+                                                            <li><i class="fa-light fa-clock"></i>20 Hours</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="h3_course-content-title"><a href="course-details.html">Examining Strategies to Promote Inclusivity and Diversity.</a></h5>
+                                                    <div class="h3_course-content-price">
+                                                        <span><del>$138</del>$85.00</span>
+                                                        <h5>Free</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h3_course-item-bottom">
+                                                <div class="h3_course-item-author">
+                                                    <div class="h3_course-item-author-img">
+                                                        <img src="{% static 'assets/img/course/3/author-3.jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="h3_course-item-author-info">
+                                                        <span>By <a href="#">Ameter</a></span>
+                                                    </div>
+                                                </div>
+                                                <div class="h3_course-item-rating">
+                                                    <ul>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                        <li><i class="fa-solid fa-star"></i></li>
+                                                    </ul>
+                                                    <span>(36)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- course area end -->
+
+            <!-- admission area start -->
+            <section class="h3_admission-area pt-140 pb-90">
+                <img src="{% static 'assets//img/admission/3/1.png' %}" alt="" class="h3_admission-bg">
+                <img src="{% static 'assets/img/admission/3/shape-1.png' %}" alt="" class="h3_admission-shape-1">
+                <img src="{% static 'assets/img/admission/3/shape-3.png' %}" alt="" class="h3_admission-shape-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 ">
+                            <div class="h3_admission-wrap mr-65 mb-50">
+                                <img src="{% static 'assets/img/admission/3/shape-2.png' %}" alt="" class="h3_admission-wrap-shape-2">
+                                <div class="section-area-3 mb-35 small-section-area-3">
+                                    <span class="section-subtitle">Education Admissions</span>
+                                    <h2 class="section-title mb-25">Bridge Opportunity Gap Support Access Education!</h2>
+                                    <p class="section-text">
+                                        Maecenas Felis Tellus, dictum sed fermentum vel, various condiment dolour donec aliquot denim ut auctor molestee, era elite pharetra masa.
+                                    </p>
+                                </div>
+                                <div class="h3_admission-content mb-35">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <span><i class="fa-regular fa-check"></i>Teach your way</span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span><i class="fa-regular fa-check"></i>Record your video</span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span><i class="fa-regular fa-check"></i>Plan your curriculum</span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span><i class="fa-regular fa-check"></i>Launch your course</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h3_admission-button">
+                                    <a href="#" class="theme-btn theme-btn-medium theme-btn-3">Apply Now<i class="fa-light fa-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="h3_admission-form mb-50">
+                                <h5 class="h3_admission-form-title">Admissions</h5>
+                                <form method = "post">
+                                    {% csrf_token %}
+                                    <div class="row g-15">
+                                        <div class="col-xl-6 col-sm-6">
+                                            <div class="h3_admission-form-input">
+                                                <input type="text" name = "username" placeholder="Введите Фио">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-sm-6">
+                                            <div class="h3_admission-form-input">
+                                                <input type="text" name = "work"  placeholder="Введите специальность">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-12">
+                                            <div class="h3_admission-form-input">
+                                                <textarea name="message" placeholder="Введите отзыв"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="h3_admission-form-btn">
+                                                <button type="submit" class="theme-btn h3_admission-btn theme-btn-full theme-btn-3">Отправить отзыв<i class="fa-light fa-arrow-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <span class="h3_admission-text">Courses Education Admissions</span> -->
+            </section>
+            <!-- admission area end -->
+
+            <!-- teacher area start -->
+            <section class="h3_teacher-area pt-135 pb-140">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section-area-3 text-center mb-60">
+                                <span class="section-subtitle">Познакомьтесь с нашими наставниками</span>
+                                <h2 class="section-title mb-0">Наши опытные преподователи</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teacher-active swiper">
+                        <div class="swiper-wrapper">
+                            {% for teacher in teachers %}
+                            <div class="swiper-slide">
+                                <div class="h3_teacher-item mb-25">
+                                    <div class="h3_teacher-img">
+                                        <img src="{{teacher.image.url}}" alt="">
+                                        <div class="h3_teacher-social">
+                                            <ul>
+                                                <li><a href="{{teacher.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                                                <li><a href="{{teacher.telegram}}"><i class="fa-brands fa-telegram"></i></a></li>
+                                            </ul>
+                                            <span class="share"><i class="fa-light fa-share-nodes"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="h3_teacher-content">
+                                        <h5 class="h3_teacher-content-title">
+                                            <a href="#">{{teacher.title}}</a>
+                                        </h5>
+                                        <span>{{teacher.work}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                           {% endfor %}
+                        </div>
+                        <div class="teacher-pagination mt-45"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- teacher area end -->
+
+            <!-- testimonial area start -->
+            <section class="h3_testimonial-area pt-135 pb-140">
+                <div class="container">
+                    <div class="row align-items-end mb-30">
+                        <div class="col-md-8">
+                            <div class="section-area-3 mb-30">
+                                <span class="section-subtitle">Testimonials</span>
+                                <h2 class="section-title mb-0">What’s People Say</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="h3_testimonial-navigation mb-40">
+                                <div class="h3_testimonial-prev"><i class="fa-regular fa-arrow-left"></i>
+                                </div>
+                                <div class="h3_testimonial-next"><i class="fa-regular fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h3_testimonial-active swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="h3_testimonial-item">
+                                    <div class="h3_testimonial-item-content">
+                                        <p>Duis euismod ipsum vel ultrices gravida. Vestibulum ac nulla condimentum, euismod massa ut, maximus orci. Aliquam nulla neque, ornare quis ligula et, scelerisque laoreet ex. Aliquam vulputate velit nisl, a eleifend libero mattis id. Vivamus nec ligula ullamcorper, porta sapien id, ullamcorper ligula. Mauris sed condimentum nisl.</p>
+                                        <img src="{% static 'assets/img/testimonial/3/quote.png' %}" alt="" class="quote">
+                                    </div>
+                                    <div class="h3_testimonial-item-author">
+                                        <img src="{% static 'assets/img/testimonial/3/1.jpg' %}" alt="">
+                                        <div class="h3_testimonial-item-author-info">
+                                            <h5>Sue Shei</h5>
+                                            <span>Special Education</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="h3_testimonial-item">
+                                    <div class="h3_testimonial-item-content">
+                                        <p>Duis euismod ipsum vel ultrices gravida. Vestibulum ac nulla condimentum, euismod massa ut, maximus orci. Aliquam nulla neque, ornare quis ligula et, scelerisque laoreet ex. Aliquam vulputate velit nisl, a eleifend libero mattis id. Vivamus nec ligula ullamcorper, porta sapien id, ullamcorper ligula. Mauris sed condimentum nisl.</p>
+                                        <img src="{% static 'assets/img/testimonial/3/quote.png' %}" alt="" class="quote">
+                                    </div>
+                                    <div class="h3_testimonial-item-author">
+                                        <img src="{% static 'assets/img/testimonial/3/2.jpg' %}" alt="">
+                                        <div class="h3_testimonial-item-author-info">
+                                            <h5>Hanson Deck</h5>
+                                            <span>Special Education</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="{% static 'assets/img/testimonial/3/shape-1.png' %}" alt="" class="h3_testimonial-shape-1">
+                <img src="{% static 'assets/img/testimonial/3/shape-2.png' %}" alt="" class="h3_testimonial-shape-2">
+                <img src="{% static 'assets/img/testimonial/3/shape-3.png' %}" alt="" class="h3_testimonial-shape-3">
+                <img src="{% static 'assets/img/testimonial/3/shape-4.png' %}" alt="" class="h3_testimonial-shape-4">
+            </section>
+            <!-- testimonial area end -->
+
+            <!-- blog area start -->
+            <section class="h3_blog-area pt-135 pb-110">
+                <div class="container">
+                    <div class="row align-items-end mb-30">
+                        <div class="col-md-9">
+                            <div class="section-area-3 mb-30">
+                                <span class="section-subtitle">Meet Our Mentors</span>
+                                <h2 class="section-title mb-0">Read Our Latest News</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="h3_category-section-button mb-40 text-md-end">
+                                <a href="#" class="theme-btn theme-btn-medium theme-btn-3">View All Blog<i class="fa-light fa-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="h3_blog-item mb-30">
+                                <div class="h3_blog-img">
+                                    <a href="blog-details.html"><img src="{% static 'assets/img/blog/3/1.jpg' %}" alt=""></a>
+                                    <a href="#" class="h3_blog-img-meta">Education</a>
+                                </div>
+                                <div class="h3_blog-content">
+                                    <div class="h3_blog-content-meta">
+                                        <span><i class="fa-thin fa-clock"></i>April 16, 2023</span>
+                                        <span><i class="fa-thin fa-user"></i>Hilary Ouse</span>
+                                    </div>
+                                    <h5 class="h3_blog-content-title"><a href="blog-details.html">The Complete Guide to Build RESTful API Application</a></h5>
+                                    <p>Proin venenatis tincidunt ligula, in cursus neque volutpat et. Nam ut nibh porta.</p>
+                                    <a href="#" class="h3_blog-btn">Read More<i class="fa-light fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="h3_blog-item mb-30">
+                                <div class="h3_blog-img">
+                                    <a href="blog-details.html"><img src="{% static 'assets/img/blog/3/2.jpg' %}" alt=""></a>
+                                    <a href="#" class="h3_blog-img-meta">Education</a>
+                                </div>
+                                <div class="h3_blog-content">
+                                    <div class="h3_blog-content-meta">
+                                        <span><i class="fa-thin fa-clock"></i>March 24, 2023</span>
+                                        <span><i class="fa-thin fa-user"></i>Elon Gated</span>
+                                    </div>
+                                    <h5 class="h3_blog-content-title"><a href="blog-details.html">Four Ways to Keep Your Workout Routine Fresh.</a></h5>
+                                    <p>Proin venenatis tincidunt ligula, in cursus neque volutpat et. Nam ut nibh porta.</p>
+                                    <a href="#" class="h3_blog-btn">Read More<i class="fa-light fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="h3_blog-item mb-30">
+                                <div class="h3_blog-img">
+                                    <a href="blog-details.html"><img src="{% static 'assets/img/blog/3/3.jpg' %}" alt=""></a>
+                                    <a href="#" class="h3_blog-img-meta">UX Design</a>
+                                </div>
+                                <div class="h3_blog-content">
+                                    <div class="h3_blog-content-meta">
+                                        <span><i class="fa-thin fa-clock"></i>July 28, 2023</span>
+                                        <span><i class="fa-thin fa-user"></i>Brian Cumin</span>
+                                    </div>
+                                    <h5 class="h3_blog-content-title"><a href="blog-details.html">Only One Thing Impossible For God Find Sense in Any.</a></h5>
+                                    <p>Proin venenatis tincidunt ligula, in cursus neque volutpat et. Nam ut nibh porta.</p>
+                                    <a href="#" class="h3_blog-btn">Read More<i class="fa-light fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- blog area end -->
+
+            <!-- cta area start -->
+            <div class="cta-area h3_cta-area">
+                <div class="container">
+                    <div class="cta-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="cta-content mb-30 mb-lg-0">
+                                    <span class="cta-subtitle">Мотивацию надо подняяяять</span>
+                                    <h2 class="cta-title">Если сразу не получилось хорошо, назовите это версией 1.0.</h2>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cta area end -->
+        </main>
+
+        <!-- footer area start -->
+        <footer class="footer-area h3_footer-area">
+            <div class="footer-top pt-240 pb-55">
+                <div class="container">
+                   <div class="row justify-content-between">
+                    <div class="col-xl-3 col-lg-7 col-md-7 col-sm-12">
+                        <div class="footer-widget mb-40">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="{{settings.logo.url}}" width = "200px" alt=""></a>
+                            </div>
+                            <p class="footer-widget-text mb-35">
+                                {{settings.descriptions}}
+                            </p>
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="{{settings.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="{{settings.facebook}}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="{{settings.youtube}}"><i class="fa-brands fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-xl-2 col-lg-5 col-md-5 col-sm-6 d-flex justify-content-xl-center">
+                            <div class="footer-widget mb-40">
+                                <h5 class="footer-widget-title">Useful Link</h5>
+                                <div class="footer-widget-list">
+                                    <ul>
+                                        <li><a href="#">About Eduan</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="#">Help Centre</a></li>
+                                        <li><a href="#">Refund</a></li>
+                                        <li><a href="#">Conditions</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-5 col-md-5 col-sm-6 d-flex justify-content-xl-center order-md-4 order-xl-3">
+                            <div class="footer-widget mb-40">
+                                {% comment %} <h5 class="footer-widget-title">Categories</h5>
+                                <div class="footer-widget-list">
+                                    <ul>
+                                        <li><a href="#">Design Skills</a></li>
+                                        <li><a href="#">Development</a></li>
+                                        <li><a href="#">Marketing</a></li>
+                                        <li><a href="#">Finance & Accounting</a></li>
+                                        <li><a href="#">IT & Software</a></li>
+                                        <li><a href="#">Sales Marketing</a></li>
+                                    </ul>
+                                </div> {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-7 col-md-7 col-sm-12 order-md-3 order-xl-4">
+                            <div class="footer-widget ml-80 mb-40">
+                                {% comment %} <h5 class="footer-widget-title">Newsletter</h5>
+                                <p class="footer-widget-text mb-20 newsletter-text">Sign up foe our newsletter and get 34% <br> off your next course.</p>
+                                <form action="#">
+                                    <div class="footer-subscribe-form">
+                                        <input type="email" placeholder="Enter Your Email*">
+                                        <button type="submit">Subscribe</button>
+                                    </div>
+                                    <div class="footer-subscribe-condition">
+                                        <label class="condition_label">I agree to the terms of use and privacy policy.
+                                            <input type="checkbox">
+                                            <span class="check_mark"></span>
+                                        </label>
+                                    </div>
+                                </form> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright-area">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="copyright-text">
+                                <p>Copyright © 2023  Все права защищены by Agusha</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer area end -->
+
+{% endblock %}
