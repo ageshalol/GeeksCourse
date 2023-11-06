@@ -1,0 +1,155 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+        <!-- sidebar-information-area-start -->
+        <div class="sidebar-info side-info">
+            <div class="sidebar-logo-wrapper mb-25">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-8">
+                        <div class="sidebar-logo">
+                            <a href="index.html"><img src="{% static 'assets/img/logo/logo-white.png' %}" alt="logo-img"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-4">
+                        <div class="sidebar-close-wrapper text-end">
+                            <button class="sidebar-close side-info-close"><i class="fal fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-menu-wrapper fix">
+                <div class="mobile-menu"></div>
+            </div>
+        </div>
+        <div class="offcanvas-overlay"></div>
+        <!-- sidebar-information-area-end -->
+
+        <!-- header area start -->
+        {% include 'include/header.html' %}
+        <!-- header area end -->
+
+        <main>
+            <!-- breadcrumb area start -->
+            <section class="breadcrumb-area bg-default" data-background="{% static 'assets/img/breadcrumb/breadcrumb-bg.jpg' %}">
+                <img src="{% static 'assets/img/breadcrumb/shape-1.png' %}" alt="" class="breadcrumb-shape">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h2 class="breadcrumb-title">Курсы</h2>
+                                <div class="breadcrumb-list">
+                                    <a href="{% url 'index' %}">Главная страница</a>
+                                    <span>Курсы</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb area end -->
+
+            <!-- course area start -->
+            <section class="innerPage_course-area pt-120 pb-90">
+                <div class="container">
+                    <div class="innerPage_course-top mb-30">
+                        <div class="row justify-content-between align-items-center">
+                            {% comment %}<div class="col-xl-4 col-md-4">
+                                 <div class="innerPage_course-left mb-20">
+                                    <p>Showing 1-8 of 24 results</p>
+                                </div> 
+                            </div>
+                            <div class="col-xl-8 col-md-8">
+                                <div class="innerPage_course-right mb-20">
+                                    <div class="innerPage_course-category">
+                                        <select name="select" class="innerPage_course-category-list has-nice-select">
+                                            <option value="1">Art & Design</option>
+                                            <option value="2">Graphic Design</option>
+                                            <option value="3">Web Design</option>
+                                            <option value="4">UX/UI Design</option>
+                                        </select>
+                                    </div>
+                                    <div class="innerPage_course-search">
+                                        <form action="#">
+                                            <input type="text" placeholder="Search Item">
+                                            <button type="submit" class="innerPage_course-search-btn"><i class="fa-thin fa-magnifying-glass"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>{% endcomment %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for course in course %}
+                        <div class="col-xxl-3 col-lg-4 col-md-6">
+                            <div class="course-item mb-30">
+                                <div class="course-img">
+                                    <img src="{{course.image.url}}" alt="">
+                                </div>
+                                <div class="course-content">
+                                    <div class="course-content-top">
+                                        <div class="course-top-title">
+                                            <h6>Преподователь:<h7> {{course.teachers}}</h7></h6>
+                                        </div>
+                                    </div>
+                                    <h5 class="course-content-title"><a href="#">{{course.title}}</a></h5>
+                                    <div class="course-content-bottom">
+                                       
+                                        <div class="h3_admission-button">
+                                            <a href="https://www.instagram.com/direct/t/17842610870604582/" class="theme-btn theme-btn-mediume theme-btn-3">Купить<i class="fa-light fa-arrow-up-right"></i></a>
+                                        </div>
+                                        {% if course.price_min %}
+                                        <div class="course-bottom-price">
+                                            <span><del>${{course.price}}</del>${{course.price_min}}</span>
+                                        </div>
+                                        {% else %}
+                                        <div class="course-bottom-price">
+                                            <span><del></del>${{course.price}}</span>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% comment %} <div class="row">
+                        <div class="col-12">
+                            <div class="pagination-area mt-20 mb-30">
+                                <ul>
+                                    <li><a href="#">01</a></li>
+                                    <li><a href="#">02</a></li>
+                                    <li><a href="#">03</a></li>
+                                    <li><a href="#">04</a></li>
+                                    <li><a href="#"><i class="fa-light fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </section>
+            <!-- course area end -->
+
+            <!-- cta area start -->
+            <div class="cta-area">
+                <div class="container">
+                    <div class="cta-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="cta-content mb-30 mb-lg-0">
+                                    <span class="cta-subtitle">Мотивацию надо подняяяять</span>
+                                    <h2 class="cta-title">Комментировать свой код — как убирать в туалете. Никогда не хочется это делать, но это реально важно для создания приятного опыта у ваших гостей.</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cta area end -->
+        </main>
+
+        <!-- footer area start -->
+        {% include 'include/footer.html' %}
+        <!-- footer area end -->
+
+		<!-- JS here -->
+{% endblock %}

@@ -7598,6 +7598,12 @@ input:focus::placeholder, textarea:focus::placeholder {
   padding: 0 20px;
 }
 
+.theme-btn-mediume {
+  height: 39px;
+  line-height: 45px;
+  padding: 0 20px;
+}
+
 .theme-btn-full {
   width: 100%;
   -webkit-box-pack: center;

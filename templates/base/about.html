@@ -55,7 +55,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-6 col-lg-6">
                             <div class="about-img mb-50">
-                                <img src="{{about.image.url}}1" alt="">
+                                <img src="{{about.image.url}}" alt="">
                                 
                             </div>
                         </div>
@@ -116,60 +116,31 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-6 col-lg-8 col-md-10">
                             <div class="section-area-2 mb-50 text-center h2_blog-section-area">
-                                <h2 class="section-title mb-30">Our Latest 
-                                    <span>Articles <img src="{% static 'assets/img/banner/2/line.png' %}" alt=""></span></h2>
+                                <h2 class="section-title mb-30">Наши последни 
+                                    <span>Новости <img src="{% static 'assets/img/banner/2/line.png' %}" alt=""></span></h2>
                                 <p class="section-text">
-                                    Through a combination of lectures, readings, discussions, students will gain a solid foundation in educational psychology.
+                                    Благодаря сочетанию лекций, чтений и дискуссий студенты получат прочную основу в педагогической психологии.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="row">
+                        {% for blog in blog %}
                         <div class="col-xl-4 col-lg-6 col-md-6">
                             <div class="h2_blog-item mb-30">
                                 <div class="h2_blog-img">
-                                    <a href="blog-details.html"><img src="{% static 'assets/img/blog/2/blog-1.jpg' %}" alt=""></a>
+                                    <a href="{% url 'blog_detail' blog.id%}"><img src="{{blog.image.url}}" alt=""></a>
                                 </div>
                                 <div class="h2_blog-content">
                                     <div class="h2_blog-content-meta">
-                                        <span><i class="fa-thin fa-user"></i>Admin</span>
-                                        <span><i class="fa-thin fa-clock"></i>June 23, 2023</span>
+                                        <span><i class="fa-thin fa-clock"></i>{{blog.created_at}}</span>
                                     </div>
-                                    <h5 class="h2_blog-content-title"><a href="blog-details.html">Education Week News and Views on Education Policy and Practice.</a></h5>
-                                    <a href="#" class="theme-btn blog-btn t-theme-btn">Read More</a>
+                                    <h5 class="h2_blog-content-title"><a href="{% url 'blog_detail' blog.id%}">{{blog.title}}</a></h5>
+                                    <a href="{% url 'blog_detail' blog.id%}" class="theme-btn blog-btn t-theme-btn">Читать дале</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="h2_blog-item mb-30">
-                                <div class="h2_blog-img">
-                                    <a href="blog-details.html"><img src="{% static 'assets/img/blog/2/blog-2.jpg' %}" alt=""></a>
-                                </div>
-                                <div class="h2_blog-content">
-                                    <div class="h2_blog-content-meta">
-                                        <span><i class="fa-thin fa-user"></i>Admin</span>
-                                        <span><i class="fa-thin fa-clock"></i>June 23, 2023</span>
-                                    </div>
-                                    <h5 class="h2_blog-content-title"><a href="blog-details.html">The Learning Network Teaching and Learning With The New York Times.</a></h5>
-                                    <a href="#" class="theme-btn blog-btn t-theme-btn">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="h2_blog-item mb-30">
-                                <div class="h2_blog-img">
-                                    <a href="blog-details.html"><img src="{% static 'assets/img/blog/2/blog-3.jpg' %}" alt=""></a>
-                                </div>
-                                <div class="h2_blog-content">
-                                    <div class="h2_blog-content-meta">
-                                        <span><i class="fa-thin fa-user"></i>Admin</span>
-                                        <span><i class="fa-thin fa-clock"></i>June 23, 2023</span>
-                                    </div>
-                                    <h5 class="h2_blog-content-title"><a href="blog-details.html">Nothing is Impossible to Learn If you are Passionate About this Subject</a></h5>
-                                    <a href="#" class="theme-btn blog-btn t-theme-btn">Read More</a>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </section>

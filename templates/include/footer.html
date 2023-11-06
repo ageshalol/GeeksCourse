@@ -14,9 +14,15 @@
                         </p>
                         <div class="footer-social">
                             <ul>
+                                {% if settings.instagram %}
                                 <li><a href="{{settings.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                                {% endif %}
+                                {% if settings.instagram %}
                                 <li><a href="{{settings.facebook}}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                {% endif %}
+                                {% if settings.instagram %}
                                 <li><a href="{{settings.youtube}}"><i class="fa-brands fa-youtube"></i></a></li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.blog.models import Blog
+from apps.blog.models import Blog,Course
 from .models import Settings,Slide,About,Team,Teachers,Review
 # Create your views here.
 def index(request):
@@ -8,7 +8,8 @@ def index(request):
     about = About.objects.latest('id')
     teachers = Teachers.objects.all()
     review = Review.objects.all()
-    blog = Blog.objects.all()
+    course = Course.objects.order_by('?')[:3]
+    blog = Blog.objects.order_by('?')[:3]
     if request.method =="POST":
         username = request.POST.get('username')
         work = request.POST.get('work')
@@ -24,10 +25,12 @@ def about(request):
     settings = Settings.objects.latest('id')
     about = About.objects.latest('id')
     team = Team.objects.all()
+    blog = Blog.objects.order_by('?')[:3]
     return render(request, "base/about.html", locals())
 
 
     
 def course(request):
+    course = Course.objects.all()
     settings = Settings.objects.latest('id')
     return render(request, "base/course.html", locals())
