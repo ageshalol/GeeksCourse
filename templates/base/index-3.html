@@ -1028,36 +1028,16 @@
                             <div class="h3_admission-wrap mr-65 mb-50">
                                 <img src="{% static 'assets/img/admission/3/shape-2.png' %}" alt="" class="h3_admission-wrap-shape-2">
                                 <div class="section-area-3 mb-35 small-section-area-3">
-                                    <span class="section-subtitle">Education Admissions</span>
-                                    <h2 class="section-title mb-25">Bridge Opportunity Gap Support Access Education!</h2>
-                                    <p class="section-text">
-                                        Maecenas Felis Tellus, dictum sed fermentum vel, various condiment dolour donec aliquot denim ut auctor molestee, era elite pharetra masa.
-                                    </p>
-                                </div>
-                                <div class="h3_admission-content mb-35">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <span><i class="fa-regular fa-check"></i>Teach your way</span>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <span><i class="fa-regular fa-check"></i>Record your video</span>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <span><i class="fa-regular fa-check"></i>Plan your curriculum</span>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <span><i class="fa-regular fa-check"></i>Launch your course</span>
-                                        </div>
-                                    </div>
+                                    <h2 class="section-title mb-25">Здесь вы можете оставить отзыв</h2>
                                 </div>
                                 <div class="h3_admission-button">
-                                    <a href="#" class="theme-btn theme-btn-medium theme-btn-3">Apply Now<i class="fa-light fa-arrow-up-right"></i></a>
+                                    <a href="#" class="theme-btn theme-btn-medium theme-btn-3">Вверх<i class="fa-light fa-arrow-up-right"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6">
                             <div class="h3_admission-form mb-50">
-                                <h5 class="h3_admission-form-title">Admissions</h5>
+                                <h5 class="h3_admission-form-title">Заявка на отзывы</h5>
                                 <form method = "post">
                                     {% csrf_token %}
                                     <div class="row g-15">
@@ -1155,36 +1135,23 @@
                     </div>
                     <div class="h3_testimonial-active swiper">
                         <div class="swiper-wrapper">
+                            {% for review in review %}
                             <div class="swiper-slide">
                                 <div class="h3_testimonial-item">
                                     <div class="h3_testimonial-item-content">
-                                        <p>Duis euismod ipsum vel ultrices gravida. Vestibulum ac nulla condimentum, euismod massa ut, maximus orci. Aliquam nulla neque, ornare quis ligula et, scelerisque laoreet ex. Aliquam vulputate velit nisl, a eleifend libero mattis id. Vivamus nec ligula ullamcorper, porta sapien id, ullamcorper ligula. Mauris sed condimentum nisl.</p>
+                                        <p>{{review.message}}</p>
                                         <img src="{% static 'assets/img/testimonial/3/quote.png' %}" alt="" class="quote">
                                     </div>
                                     <div class="h3_testimonial-item-author">
-                                        <img src="{% static 'assets/img/testimonial/3/1.jpg' %}" alt="">
+                                        {% comment %} <img src="{% static 'assets/img/testimonial/3/1.jpg' %}" alt=""> {% endcomment %}
                                         <div class="h3_testimonial-item-author-info">
-                                            <h5>Sue Shei</h5>
-                                            <span>Special Education</span>
+                                            <h5>{{review.username}}</h5>
+                                            <span>{{review.work}}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="h3_testimonial-item">
-                                    <div class="h3_testimonial-item-content">
-                                        <p>Duis euismod ipsum vel ultrices gravida. Vestibulum ac nulla condimentum, euismod massa ut, maximus orci. Aliquam nulla neque, ornare quis ligula et, scelerisque laoreet ex. Aliquam vulputate velit nisl, a eleifend libero mattis id. Vivamus nec ligula ullamcorper, porta sapien id, ullamcorper ligula. Mauris sed condimentum nisl.</p>
-                                        <img src="{% static 'assets/img/testimonial/3/quote.png' %}" alt="" class="quote">
-                                    </div>
-                                    <div class="h3_testimonial-item-author">
-                                        <img src="{% static 'assets/img/testimonial/3/2.jpg' %}" alt="">
-                                        <div class="h3_testimonial-item-author-info">
-                                            <h5>Hanson Deck</h5>
-                                            <span>Special Education</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -1212,57 +1179,23 @@
                         </div>
                     </div>
                     <div class="row">
+                        {% for blog in blog %}
                         <div class="col-xl-4 col-lg-6 col-md-6">
                             <div class="h3_blog-item mb-30">
                                 <div class="h3_blog-img">
-                                    <a href="blog-details.html"><img src="{% static 'assets/img/blog/3/1.jpg' %}" alt=""></a>
-                                    <a href="#" class="h3_blog-img-meta">Education</a>
+                                    <a href="{% url 'blog_detail' blog.id%}"><img src="{{blog.image.url}}" alt=""></a>
+                                    {% comment %} <a href="#" class="h3_blog-img-meta">Education</a> {% endcomment %}
                                 </div>
                                 <div class="h3_blog-content">
                                     <div class="h3_blog-content-meta">
-                                        <span><i class="fa-thin fa-clock"></i>April 16, 2023</span>
-                                        <span><i class="fa-thin fa-user"></i>Hilary Ouse</span>
+                                        <span><i class="fa-thin fa-clock"></i>{{blog.created_at}}</span>
                                     </div>
-                                    <h5 class="h3_blog-content-title"><a href="blog-details.html">The Complete Guide to Build RESTful API Application</a></h5>
-                                    <p>Proin venenatis tincidunt ligula, in cursus neque volutpat et. Nam ut nibh porta.</p>
-                                    <a href="#" class="h3_blog-btn">Read More<i class="fa-light fa-arrow-right"></i></a>
+                                    <h5 class="h3_blog-content-title"><a href="{% url 'blog_detail' blog.id%}">{{blog.title}}</a></h5>
+                                    <a href="{% url 'blog_detail' blog.id%}" class="h3_blog-btn">Читать далее<i class="fa-light fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="h3_blog-item mb-30">
-                                <div class="h3_blog-img">
-                                    <a href="blog-details.html"><img src="{% static 'assets/img/blog/3/2.jpg' %}" alt=""></a>
-                                    <a href="#" class="h3_blog-img-meta">Education</a>
-                                </div>
-                                <div class="h3_blog-content">
-                                    <div class="h3_blog-content-meta">
-                                        <span><i class="fa-thin fa-clock"></i>March 24, 2023</span>
-                                        <span><i class="fa-thin fa-user"></i>Elon Gated</span>
-                                    </div>
-                                    <h5 class="h3_blog-content-title"><a href="blog-details.html">Four Ways to Keep Your Workout Routine Fresh.</a></h5>
-                                    <p>Proin venenatis tincidunt ligula, in cursus neque volutpat et. Nam ut nibh porta.</p>
-                                    <a href="#" class="h3_blog-btn">Read More<i class="fa-light fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="h3_blog-item mb-30">
-                                <div class="h3_blog-img">
-                                    <a href="blog-details.html"><img src="{% static 'assets/img/blog/3/3.jpg' %}" alt=""></a>
-                                    <a href="#" class="h3_blog-img-meta">UX Design</a>
-                                </div>
-                                <div class="h3_blog-content">
-                                    <div class="h3_blog-content-meta">
-                                        <span><i class="fa-thin fa-clock"></i>July 28, 2023</span>
-                                        <span><i class="fa-thin fa-user"></i>Brian Cumin</span>
-                                    </div>
-                                    <h5 class="h3_blog-content-title"><a href="blog-details.html">Only One Thing Impossible For God Find Sense in Any.</a></h5>
-                                    <p>Proin venenatis tincidunt ligula, in cursus neque volutpat et. Nam ut nibh porta.</p>
-                                    <a href="#" class="h3_blog-btn">Read More<i class="fa-light fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </section>

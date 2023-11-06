@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from apps.blog.models import Blog
 from .models import Settings,Slide,About,Team,Teachers,Review
 # Create your views here.
 def index(request):
@@ -7,6 +8,7 @@ def index(request):
     about = About.objects.latest('id')
     teachers = Teachers.objects.all()
     review = Review.objects.all()
+    blog = Blog.objects.all()
     if request.method =="POST":
         username = request.POST.get('username')
         work = request.POST.get('work')
