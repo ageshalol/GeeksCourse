@@ -31,13 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'nurchik',
+    
+    'ckeditor',
+    
+    #apps
+    'apps.nurchik',
+    'apps.blog',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +133,36 @@ MEDIA_ROOT = BASE_DIR/ 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Vizitka.KG",
+    "site_header": "Vizitka.KG",
+    "site_brand": "Vizitka.KG",
+    "welcome_sign": "Добро пожаловать в Vizitka.KG",
+    "search_model": ["auth.User", "blog.Post"],
+    "topmenu_links": [
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Support", "url": "https://t.me/geeksosh", "new_window": True},
+        {"model": "auth.User"},
+        {"app": "blog"},
+    ],
+    "show_sidebar": True,
+    "show_ui_builder": True,
+    "navigation_expanded": True,
+    "css": {
+        "extra": ["css/custom.css"],  # замените на путь к вашему CSS-файлу
+    },
+}
+
+#Ckeditor
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'  # URL to jQuery
+CKEDITOR_IMAGE_BACKEND = "pillow"  # Путь к пакету Pillow для обработки изображений
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',  # Вы можете настроить свою собственную панель инструментов CKEditor
+        'height': 300,
+        'width': 800,
+    },
+}

@@ -12,7 +12,7 @@ def index(request):
         work = request.POST.get('work')
         message = request.POST.get('message')
         reserv = Review.objects.create(username = username,work = work,message=message)
-    return render(request, "index-3.html", locals())
+    return render(request, "base/index-3.html", locals())
 
 def contact(request):
     settings = Settings.objects.latest('id')  # settings - аСЕМАНЫН УКАСИ   Settings - аСЕМА
@@ -22,12 +22,10 @@ def about(request):
     settings = Settings.objects.latest('id')
     about = About.objects.latest('id')
     team = Team.objects.all()
-    return render(request, "about.html", locals())
+    return render(request, "base/about.html", locals())
 
-def blog(request):
-    settings = Settings.objects.latest('id')
-    return render(request, "blog.html", locals())
+
     
 def course(request):
     settings = Settings.objects.latest('id')
-    return render(request, "course.html", locals())
+    return render(request, "base/course.html", locals())

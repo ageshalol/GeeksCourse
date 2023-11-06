@@ -1,0 +1,112 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+       <!-- sidebar-information-area-start -->
+        <div class="sidebar-info side-info">
+            <div class="sidebar-logo-wrapper mb-25">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-8">
+                        <div class="sidebar-logo">
+                            <a href="index.html"><img src="{% static 'assets/img/logo/logo-white.png' %}" alt="logo-img"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-4">
+                        <div class="sidebar-close-wrapper text-end">
+                            <button class="sidebar-close side-info-close"><i class="fal fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-menu-wrapper fix">
+                <div class="mobile-menu"></div>
+            </div>
+        </div>
+        <div class="offcanvas-overlay"></div>
+        <!-- sidebar-information-area-end -->
+
+        <!-- header area start -->
+        {% include 'include/header.html' %}
+        <!-- header area end -->
+
+        <main>
+            <!-- breadcrumb area start -->
+            <section class="breadcrumb-area bg-default" data-background="{% static 'assets/img/breadcrumb/breadcrumb-bg.jpg' %}">
+                <img src="{% static 'assets/img/breadcrumb/shape-1.png' %}" alt="" class="breadcrumb-shape">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h2 class="breadcrumb-title">Новости</h2>
+                                <div class="breadcrumb-list">
+                                    <a href="{% url 'index' %}">Главная страницы</a>
+                                    <span>Новости</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb area end -->
+
+            <!-- blog area start -->
+            <section class="innerPage_blog-area pt-120 pb-90">
+                <div class="container">
+                    <div class="row">
+                        {% for blog in blog%}
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="h2_blog-item mb-30">
+                                <div class="h2_blog-img">
+                                    <a href="{% url 'blog_detail' blog.id%}"><img src="{{blog.image.url}}" alt=""></a>
+                                </div>
+                                <div class="h2_blog-content">
+                                    <div class="h2_blog-content-meta">
+                                        <span><i class="fa-thin fa-clock"></i>{{blog.created_at}}</span>
+                                    </div>
+                                    <h5 class="h2_blog-content-title"><a href="{% url 'blog_detail' blog.id%}">{{blog.title}}</a></h5>
+                                    <a href="{% url 'blog_detail' blog.id%}" class="theme-btn blog-btn t-theme-btn">Читать дале</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="pagination-area mt-20 mb-30">
+                                <ul>
+                                    <li><a href="#">01</a></li>
+                                    <li><a href="#">02</a></li>
+                                    <li><a href="#">03</a></li>
+                                    <li><a href="#">04</a></li>
+                                    <li><a href="#"><i class="fa-light fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- blog area end -->
+
+            <!-- cta area start -->
+            <div class="cta-area">
+                <div class="container">
+                    <div class="cta-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="cta-content mb-30 mb-lg-0">
+                                    <span class="cta-subtitle">Мотивацию надо подняяяять</span>
+                                    <h2 class="cta-title">Не трогай если работает...</h2>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cta area end -->
+        </main>
+
+        <!-- footer area start -->
+        {% include 'include/footer.html' %}
+
+        <!-- footer area end -->
+{% endblock %}
