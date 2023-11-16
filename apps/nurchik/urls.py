@@ -1,8 +1,9 @@
 from django.urls import path
-from apps.nurchik.views import index, contact, about,course
+from apps.nurchik import views
 urlpatterns = [
-    path('', index, name="index"),
-    path('contact', contact, name="contact"),
-    path('about', about, name="about"),
-    path('course', course, name="course"),
+    path('', views.index, name="index"),
+    path('contact', views.contact, name="contact"),
+    path('about', views.about, name="about"),
+    path('course', views.course, name="course"),
+    path('gallery', views.gallery, name="gallery"),
 ]

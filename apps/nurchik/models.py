@@ -1,4 +1,5 @@
 from django.db import models
+from django_resized.forms import ResizedImageField 
 
 # Create your models here.
 class Settings(models.Model):
@@ -151,3 +152,16 @@ class Review(models.Model):
     class Meta:
         verbose_name = "Наш отзыв"
         verbose_name_plural = "Наши отзывы"
+        
+class Gallery(models.Model):
+    image =  ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='course_image/',
+        verbose_name="Фотография",
+        blank = True, null = True
+    )
+    class Meta:
+        verbose_name = "Галерея"
+        verbose_name_plural = "Галерея"
+        
