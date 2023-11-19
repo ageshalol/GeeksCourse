@@ -124,8 +124,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR /'static'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+# STATIC_ROOT = BASE_DIR /'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/ 'media'
@@ -172,4 +172,4 @@ EMAIL_USE_TLS = True  # Использовать TLS для защищенног
 EMAIL_HOST = 'smtp.gmail.com'  # Адрес SMTP сервера Gmail
 EMAIL_PORT = 587  # Порт для подключения к SMTP серверу Gmail
 EMAIL_HOST_USER = 'bullabratan@gmail.com'
-EMAIL_HOST_PASSWORD = 'zlrwdyljhsupxnfo'q
+EMAIL_HOST_PASSWORD = 'zlrwdyljhsupxnfo'
