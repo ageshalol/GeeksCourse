@@ -165,5 +165,3 @@ class Gallery(models.Model):
         verbose_name = "Галерея"
         verbose_name_plural = "Галерея"
         
-class Contacts(models.Model):
-    

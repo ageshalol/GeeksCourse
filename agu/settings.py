@@ -168,8 +168,8 @@ CKEDITOR_CONFIGS = {
     },
 }
 
-EMAIL_USE_TLS = True  # Использовать TLS для защищенного соединения
-EMAIL_HOST = 'smtp.gmail.com'  # Адрес SMTP сервера Gmail
-EMAIL_PORT = 587  # Порт для подключения к SMTP серверу Gmail
-EMAIL_HOST_USER = 'bullabratan@gmail.com'
-EMAIL_HOST_PASSWORD = 'zlrwdyljhsupxnfo'
+# EMAIL_USE_TLS = True  # Использовать TLS для защищенного соединения
+# EMAIL_HOST = 'smtp.gmail.com'  # Адрес SMTP сервера Gmail
+# EMAIL_PORT = 587  # Порт для подключения к SMTP серверу Gmail
+# EMAIL_HOST_USER = 'bullabratan@gmail.com'
+# EMAIL_HOST_PASSWORD = 'zlrwdyljhsupxnfo'
